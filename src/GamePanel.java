@@ -22,7 +22,7 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener
 	// An array list is an object wrapper for an array, allows dynamic resizing
 	private ArrayList<Player> players = new ArrayList<Player>();
 	private Player activePlayer;
-	private int keyCode;
+	private int keyCode = -1;
 	private Timer t;
 
 	public GamePanel()
@@ -130,7 +130,8 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener
 		keyCode = e.getKeyCode();
 
 		// send that keycode to the player to move
-		activePlayer.move(keyCode, this);
+		if (activePlayer != null)
+			activePlayer.move(keyCode, this);
 
 		// repaint the canvas
 		repaint();
@@ -140,7 +141,8 @@ public class GamePanel extends JPanel implements MouseListener, KeyListener
 	{
 		// move if a key is being held
 		if (keyCode > 0)
-			activePlayer.move(keyCode, this);
+			if (activePlayer != null)
+				activePlayer.move(keyCode, this);
 
 		// repaint the canvas
 		repaint();
