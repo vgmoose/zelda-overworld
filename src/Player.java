@@ -88,21 +88,25 @@ public class Player
 		switch (keyCode)
 		{
 		case KeyEvent.VK_UP:
+		case KeyEvent.VK_W:
 			this.direction = 1;
 			if (gp.checkCollisions(x, y-speed))
 				this.y -= this.speed;
 			break;
 		case KeyEvent.VK_DOWN:
+		case KeyEvent.VK_S:
 			this.direction = 0;
 			if (gp.checkCollisions(x, y+speed))
 				this.y += this.speed;
 			break;
 		case KeyEvent.VK_LEFT:
+		case KeyEvent.VK_A:
 			this.direction = 2;
 			if (gp.checkCollisions(x-speed, y))
 				this.x -= this.speed;
 			break;
 		case KeyEvent.VK_RIGHT:
+		case KeyEvent.VK_D:
 			this.direction = 3;
 			if (gp.checkCollisions(x+speed, y))
 				this.x += this.speed;
