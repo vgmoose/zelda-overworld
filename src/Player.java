@@ -63,7 +63,7 @@ public class Player
 		
 		try {
 			// create the background
-			bg = ImageIO.read(new File("grass.png"));
+			bg = ImageIO.read(Movement.class.getResource("res/grass.png"));
 		} catch (IOException e1) {
 			System.out.println("Failed to load background");
 		}
@@ -72,7 +72,7 @@ public class Player
 		for (int i=0; i<im.length; i++)
 		{
 			try {
-				images[i] = ImageIO.read(new File(im[i]));
+				images[i] = ImageIO.read(Movement.class.getResource("res/"+im[i]));
 			} catch (IOException e) {
 				System.out.println("Error loading "+im[i]);
 			}

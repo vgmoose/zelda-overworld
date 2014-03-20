@@ -16,5 +16,10 @@ public class Movement
 		
 		// Display the window
 		window.setVisible(true);
+		
+		// To demonstrate modularity, uncomment the below two lines
+		// to get a second instance to appear!
+//		GameWindow window2 = new GameWindow();
+//		window2.setVisible(true);
 	}
 }
